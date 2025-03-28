@@ -21,7 +21,7 @@ public class UrlController {
     @Autowired
     UrlRepository urlRepository;
 
-    @GetMapping("/")
+    @GetMapping("/hello")
     public String index() {
         return "Hello World!";
     }

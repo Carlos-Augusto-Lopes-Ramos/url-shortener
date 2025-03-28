@@ -1,0 +1,5 @@
+com/desafio/urlshorter/UrlshorterApplication.class
+com/desafio/urlshorter/Controllers/UrlController.class
+com/desafio/urlshorter/repositories/UrlRepository.class
+com/desafio/urlshorter/dtos/UrlRecordDto.class
+com/desafio/urlshorter/models/UrlModel.class
