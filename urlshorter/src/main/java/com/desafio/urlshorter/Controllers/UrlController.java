@@ -21,6 +21,11 @@ public class UrlController {
     @Autowired
     UrlRepository urlRepository;
 
+    @GetMapping("/")
+    public String index() {
+        return "Hello World!";
+    }
+
     @PostMapping("/shorten-url")
     @ResponseBody
     public ResponseEntity<Object> createShortUrl(@RequestBody UrlRecordDto urlData) {
@@ -28,7 +33,7 @@ public class UrlController {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String dayFormated = sdf.format(new Date());
         if(verificationUrl != null) {
-            return ResponseEntity.status(HttpStatus.OK).body("https://xxx.com/" + verificationUrl.getUrlshort());
+            return ResponseEntity.status(HttpStatus.OK).body("https://hazway.com.br/programs/encurta/" + verificationUrl.getUrlshort());
         }
         UrlModel url = new UrlModel();
         url.setLink(urlData.link());
@@ -39,7 +44,7 @@ public class UrlController {
         url.setUrlshort(shortUrl);
         url.setDay(dayFormated);
         url = urlRepository.save(url);
-        return ResponseEntity.status(HttpStatus.OK).body("https://xxx.com/" + url.getUrlshort());
+        return ResponseEntity.status(HttpStatus.OK).body("https://hazway.com.br/programs/encurta/" + url.getUrlshort());
     }
 
     @GetMapping("/shorten-url")
