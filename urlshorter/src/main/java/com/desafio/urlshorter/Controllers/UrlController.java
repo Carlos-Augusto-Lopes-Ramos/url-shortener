@@ -22,8 +22,9 @@ public class UrlController {
     UrlRepository urlRepository;
 
     @GetMapping("/hello")
-    public String index() {
-        return "Hello World!";
+    @ResponseBody
+    public ResponseEntity<Object> helloWorld() {
+        return ResponseEntity.status(HttpStatus.OK).body("Hello World!");
     }
 
     @PostMapping("/shorten-url")
